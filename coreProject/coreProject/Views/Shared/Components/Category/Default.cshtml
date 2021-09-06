@@ -1,0 +1,19 @@
+﻿@model List<Categories>
+
+<div class="list-group">
+
+    <a href="/home/index" class="list-group-item list-group-item-action">Tüm Filmler</a>
+
+    @foreach (var item in Model)
+    {
+        <input type="hidden" asp-controller="Home" asp-action="Index" asp-for="@item.Id" />
+        @*<a asp-action="Index" asp-controller="Home" asp-route-id="@item.Id" class="list-group-item-action">@item.Name</a>*@
+        <a href="/home/index/@item.Id" 
+           class="list-group-item list-group-item-action">@item.Name</a>
+    }
+</div>
+
+
+
+
+

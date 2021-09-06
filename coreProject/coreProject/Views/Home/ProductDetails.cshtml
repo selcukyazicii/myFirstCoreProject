@@ -1,0 +1,35 @@
+﻿@model Product
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 ">
+            <img src="/img/@Model.Photo" class="w-100 img-thumbnail img-fluid" alt="@Model.Name" />
+        </div>
+
+        <div class="col-md-9">
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    @*<img class="card-img-top" alt="">*@
+                    @*<div class="label-top shadow-sm text-left">@Model.Name</div>*@
+                    <h5 class="card-header">@Model.Name</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.Name</h5>
+                        <div class="clearfix mb-5">
+                            <strong>Kategorileri: </strong> <getCategoryName product-id="@Model.Id"></getCategoryName>
+                            <p>
+
+                            </p>
+                            <span class="float-start badge rounded-pill bg-success">
+                                Fiyat:  @Model.Price $
+                            </span> <span class="float-end"><a href="#" class="small text-muted"></a></span>
+                        </div>
+                        @*<div class="text-center my-4"><a href="#" class="btn btn-primary float-right mr-1">Sepete Ekle</a> </div>*@
+                        <a  asp-action="AddToBasket" asp-controller="Home" asp-route-id="@Model.Id" class="btn btn-primary float-right mr-1">Sepete Ekle</a>
+
+                        <a asp-action="Index" asp-controller="Home" class="btn btn-warning float-right mr-1">Geri Dön</a>
+                        @*<div class="clearfix mb-1"> <span class="float-start"><i class="far fa-question-circle"></i></span> <span class="float-end"><i class="fas fa-plus"></i></span> </div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

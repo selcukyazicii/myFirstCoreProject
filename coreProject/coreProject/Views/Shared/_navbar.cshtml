@@ -1,0 +1,28 @@
+﻿<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/home/index">AspNetCoreTutorial</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <form asp-action="/Home/Index" method="get" asp-controller="Home">
+                <input type="text" name="q" asp-items="ViewBag.Search"/>
+                <input type="submit" class="btn btn-danger" value="Search" />
+            </form>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" ml-auto>
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-controller="Home" asp-action="Basket">Sepete Git <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="http://www.instagram.com/selckyzci">Instagram <span class="sr-only">(current)</span></a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>

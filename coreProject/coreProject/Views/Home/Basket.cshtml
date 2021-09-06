@@ -1,0 +1,58 @@
+﻿@model List<Product>
+
+
+
+@{
+    decimal toplamFiyat = 0;
+    if (Model != null)
+    {
+        toplamFiyat = Model.Sum(x => x.Price);
+
+    }
+}
+@if (Model != null)
+{
+    <div>
+        <div class="card">
+            <h5 class="card-header">Tutar Bilgileri</h5>
+            <div class="card-body">
+
+                <p class="card-text">
+                    Sepetinizdeki Toplam Tutar: @toplamFiyat -TL
+                </p>
+                <a asp-action="Index" asp-controller="Home" class="btn btn-warning">Alışverişe Devam Et</a>
+                <a asp-action="EmtpyToBasket" asp-controller="Home" asp-route-fiyat="@toplamFiyat" class="btn btn-primary">Satın Al</a>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        @foreach (var item in Model)
+        {
+            <div class="card my-1 w-100">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="/img/@item.Photo" alt="@item.Name">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Name</h5>
+                            <p class="card-text">@item.Price TL</p>
+                            <a asp-action="TakeOutBasket" asp-controller="Home" asp-route-id="@item.Id">Sepetten Çıkar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+}
+else
+{
+<div class="text-center">
+    Sepetinizde Ürün Bulunamadı
+    <a asp-action="Index" asp-controller="Home" class="btn btn-warning">Alışverişe Devam Et</a>
+
+</div>
+}
+

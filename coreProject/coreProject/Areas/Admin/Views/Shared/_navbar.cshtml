@@ -1,0 +1,21 @@
+﻿<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/home/index">AspNetCoreTutorial</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto" >
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-area="Admin" asp-controller="Product" asp-action="Index" >Ürün İşlemleri <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-controller="Category" asp-action="Index" asp-area="Admin">Kategori İşlemleri<span class="sr-only">(current)</span></a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</body>

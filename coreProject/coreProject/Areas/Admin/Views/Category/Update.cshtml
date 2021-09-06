@@ -1,0 +1,13 @@
+﻿@model UpdateCategoryModel
+    <h1>Category Update Pages</h1>
+    <br />
+    <br />
+    <form asp-controller="Category" asp-action="Update" asp-area="Admin" method="post">
+        <div class="form-group">
+            <label>Category Name: </label>
+            <span asp-validation-for="@Model.Name"></span>
+            <input asp-for="@Model.Name" type="text" class="form-control" />
+        </div>
+        <button class="btn btn-primary">Update Category</button>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-warning">Get Back</a>
+    </form>

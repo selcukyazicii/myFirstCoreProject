@@ -1,0 +1,24 @@
+﻿@model UpdateProductModel
+
+<form asp-action="Update" asp-controller="Product" asp-area="Admin" method="post" class="w-75 mx-auto p-3" enctype="multipart/form-data">
+    <input type="hidden" asp-for="@Model.Id"  />
+    <div class="form-group">
+        <label>Product Name: </label>
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+        <input type="text" asp-for="@Model.Name" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Product Price</label>
+        <span asp-validation-for="@Model.Price" class="text-danger"></span>
+        <input type="text" asp-for="@Model.Price" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label>Product Photo</label>
+        <input type="file" asp-for="@Model.Photo" class="form-control-file" />
+    </div>
+    <div>
+        <button class="btn btn-primary">Update Product</button>
+    </div>
+</form>

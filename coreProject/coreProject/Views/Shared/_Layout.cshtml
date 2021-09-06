@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+
+@* Navbar *@
+<body>
+
+@await Html.PartialAsync("_navbar")
+    @* navbar bitiş *@
+
+    <div class="mt-lg-1">
+        @RenderBody()
+    </div>
+
+    <script src="~/jquery/jquery.min.js"></script>
+    @RenderSection("Javascript",false)
+</body>
+</html>
